@@ -16,7 +16,6 @@ class _ChangeColorState extends State<ChangeColor> {
   int g = 84;
   int b = 228;
   int index = 0;
-  //final Random _random = Random();
   static const List<String> direction = [
     'Horizontal',
     'Vertical',
@@ -64,7 +63,7 @@ class _ChangeColorState extends State<ChangeColor> {
 
   void changed() {
     setState(() {
-      index = (index + 1) % 4; //index = _random.nextInt(4);
+      index = (index + 1) % 4;
     });
   }
 
@@ -75,7 +74,7 @@ class _ChangeColorState extends State<ChangeColor> {
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [color, Color.fromARGB(199, 247, 245, 248), color],
+              colors: [color, Color.fromARGB(255, 247, 245, 248), color],
               begin: begin(),
               end: end(),
             ),
@@ -86,10 +85,10 @@ class _ChangeColorState extends State<ChangeColor> {
               children: [
                 OutlinedButton(
                   onPressed: changec,
-                  /*style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: Colors.white),
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: Colors.white, width: 1.5),
                     foregroundColor: Colors.white,
-                  ),*/
+                  ),
                   child: Text('Change Color'),
                 ),
                 SizedBox(height: 20),
@@ -100,10 +99,10 @@ class _ChangeColorState extends State<ChangeColor> {
                 SizedBox(height: 50),
                 OutlinedButton(
                   onPressed: changed,
-                  /* style: OutlinedButton.styleFrom(
-                    side: BorderSide(color: Colors.white),
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: Colors.white, width: 1.5),
                     foregroundColor: Colors.white,
-                  ),*/
+                  ),
                   child: Text('Change Direction'),
                 ),
                 SizedBox(height: 20),
